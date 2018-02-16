@@ -39,11 +39,11 @@ Below is an example Resource definition that passes in the username and password
           type="javax.sql.DataSource" />
 ```
 
-The secret filenames are passed in by defining environment variables in your container's startup
+The names of the secrets are passed in by defining environment variables in your container's startup
 command. You can also specify those values in your docker-compose.yml file.
 
 ```
-> docker run ... -e DB_USERNAME_SECRET='parfile_user' -e DB_PASSWORD_SECRET='parfile_password' ...
+> docker run ... -e DB_USERNAME_SECRET='db_user_secret' -e DB_PASSWORD_SECRET='db_password_secret' ...
 ```
 
 In order for the Factory to execute, you'll need to place the factory Jar into your Tomcat directory
