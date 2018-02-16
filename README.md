@@ -29,8 +29,8 @@ Below is an example Resource definition that passes in the username and password
       <Resource auth="Container"
           driverClassName="oracle.jdbc.OracleDriver"
           url="jdbc:oracle:thin:@oracledb:1521:DBNAME"
-          username="PARFILE_USERNAME_SECRET"
-          password="PARFILE_PASSWORD_SECRET"
+          username="DB_USERNAME_SECRET"
+          password="DB_PASSWORD_SECRET"
           name="jdbc/jndiname"
           maxActive="10"
           maxIdle="5"
@@ -43,7 +43,7 @@ The secret filenames are passed in by defining environment variables in your con
 command. You can also specify those values in your docker-compose.yml file.
 
 ```
-> docker run ... -e PARFILE_USERNAME_SECRET='parfile_user' -e PARFILE_PASSWORD_SECRET='parfile_password' ...
+> docker run ... -e DB_USERNAME_SECRET='parfile_user' -e DB_PASSWORD_SECRET='parfile_password' ...
 ```
 
 In order for the Factory to execute, you'll need to place the factory Jar into your Tomcat directory
